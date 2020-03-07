@@ -59,7 +59,7 @@
           
           <?php
              
-            $consulta = "SELECT * FROM horarios";
+            $consulta = "SELECT * FROM turma";
             $resultado = mysqli_query($conexao, $consulta);
             $array = mysqli_fetch_array($resultado);
              while ($array = mysqli_fetch_assoc($resultado)) {
@@ -70,7 +70,7 @@
                  <td><?php echo $array['posicao']; ?></td>
                  <td><?php echo $array['dia_da_semana']; ?></td>
                  <td><?php echo $array['hora_inicial_hora_final']; ?></td>
-                <td><button type="submit" class="btn btn-danger" name="cod_horarios" value=<?php echo $array['cod_horarios']; ?>>Excluir</button></td>
+                <td><button type="submit" class="btn btn-danger" name="cod_turma" value=<?php echo $array['cod_turma']; ?>>Excluir</button></td>
              
             </tr>
            <?php } ?>

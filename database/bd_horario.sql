@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Mar-2020 às 00:43
+-- Tempo de geração: 07-Mar-2020 às 00:43
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.1.32
 
@@ -103,7 +103,8 @@ CREATE TABLE `escola` (
 --
 
 INSERT INTO `escola` (`cod_escola`, `cnpj`, `nome`, `telefone`, `endereco`, `numero`, `cidade`, `estado`, `pais`, `cep`, `tipo_escola`, `data_cadastro`, `senha`) VALUES
-(1, '', 'Berenice', '', '', '', '', 'Estado...', '', '', 'Escolher..', '27/02/2020', '');
+(1, '', 'Berenice', '', '', '', '', 'Estado...', '', '', 'Escolher..', '27/02/2020', ''),
+(2, '0000000000000', 'PIERRE DA SILVA LEÃƒO', '999999999999', 'Rua E', '90', 'ARCOS', 'MG', 'BRASIL', '35588000', 'Particular', '05/03/2020', '');
 
 -- --------------------------------------------------------
 
@@ -115,12 +116,17 @@ CREATE TABLE `horarios` (
   `cod_horarios` int(50) NOT NULL,
   `cod_turno` int(20) DEFAULT NULL,
   `cod_escola` int(20) DEFAULT NULL,
-  `ordem` varchar(20) NOT NULL,
-  `posicao` varchar(20) NOT NULL,
-  `dia_da_semana` varchar(100) NOT NULL,
-  `hora_inicial` varchar(100) NOT NULL,
-  `hora_final` varchar(100) NOT NULL
+  `posicao` varchar(200) NOT NULL,
+  `dia_da_semana` varchar(200) NOT NULL,
+  `hora_inicial_hora_final` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `horarios`
+--
+
+INSERT INTO `horarios` (`cod_horarios`, `cod_turno`, `cod_escola`, `posicao`, `dia_da_semana`, `hora_inicial_hora_final`) VALUES
+(28, NULL, NULL, '90', 'SE', '15:30 Ã¡s 14:50');
 
 -- --------------------------------------------------------
 
@@ -201,6 +207,17 @@ CREATE TABLE `turma` (
   `cod_escola` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `turma`
+--
+
+INSERT INTO `turma` (`cod_turma`, `nome`, `qnt_horarios`, `turno`, `cod_turno`, `cod_escola`) VALUES
+(4, 'PIERRE DA SILVA LEÃƒ', '', '', NULL, 0),
+(5, 'LUCAS DA SILVA LEAO', '', '', NULL, 0),
+(6, 'PIERRE DA SILVA LEÃƒ', '52', 'SE', NULL, NULL),
+(7, 'Marli Aparecida Silv', '10', 'TE', NULL, NULL),
+(8, 'LUCAS DA SILVA LEAO', '10', 'Manha', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -233,7 +250,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`, `email`, `tipo_usuario`, `cod_escola`) VALUES
-(1, 'maria', '202cb962ac59075b964b07152d234b70', 'maria@maria.com', 'Administrador', 1);
+(1, 'maria', '202cb962ac59075b964b07152d234b70', 'maria@maria.com', 'Administrador', 1),
+(2, 'pierresilvaleao@hotmail.com', '9e60e43616ca03abe009c1d7153cfc32', 'pierresilvaleao@hotmail.com', 'Administrador', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -337,7 +355,7 @@ ALTER TABLE `dias_da_semana`
 -- AUTO_INCREMENT de tabela `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `cod_disciplina` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_disciplina` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `disciplina_por_turma`
@@ -349,13 +367,13 @@ ALTER TABLE `disciplina_por_turma`
 -- AUTO_INCREMENT de tabela `escola`
 --
 ALTER TABLE `escola`
-  MODIFY `cod_escola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_escola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `horarios`
 --
 ALTER TABLE `horarios`
-  MODIFY `cod_horarios` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cod_horarios` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `indisponibilidade`
@@ -385,7 +403,7 @@ ALTER TABLE `tipo_ensino`
 -- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `cod_turma` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_turma` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `turno`
@@ -397,7 +415,7 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_usuario` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

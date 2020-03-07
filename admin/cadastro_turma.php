@@ -12,17 +12,24 @@
           <div class="row">
             <div class="col">
               <label for="exampleInputPassword1">Nome</label>
-              <input type="text" class="form-control" placeholder="Digite seu Nome" required="required" name="nome">
+              <input type="text" class="form-control" placeholder="Digite a Turma" required="required" name="nome">
             </div>
             <div class="col">
               <label for="exampleInputPassword1">Quantidade de Horários</label>
-              <input type="text" class="form-control" placeholder="Digite a Quantidade de Horários" name="qtd_horários">
+              <input type="text" class="form-control" placeholder="Digite a Quantidade de Horários" name="qnt_horarios">
             </div>
           </div><br>
-          <div class="row">
-            <div class="col">
+         <div class="col">
               <label for="exampleInputPassword1">Turno</label>
-              <input type="text" class="form-control" placeholder="Digite seu Turno" name="turno">
+                <select type="text" class="form-control" placeholder="Selacione o Turno" required="required" name ="turno">
+                  <option value="none" style="color: #DCDCDC">Selecione o turno desejado</option>               
+                  <option value="Vespertino">Vespertino</option>
+                  <option value="Matutino">Matutino</option>
+                  <option value="Noturno">Noturno</option>
+                  <option value="Vespertino/Matutino">Vespertino/Matutino</option>
+                  <option value="Vespetino/Matutino/Noturno">Vespertino/Matutino/Noturno</option>
+                </select>
+             
             </div>
             <div class="table">
               <label for="exampleInputPassword1"></label>
@@ -34,62 +41,29 @@
         </form>
 
 
-          <!-- Tabela de cadastrados -->
-       <table class="table">
-               <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Quantidade de horários</th>
-                  <th scope="col">Turno</th>
-                  <th scope="col">Ação</th>
-                </tr>
-               </thead>
-                <tbody>
-                  <?php
-                    $cod_escola = $_SESSION['cod_escola'];
-                    $consulta = "SELECT * FROM turma WHERE cod_escola = '$cod_escola'";
-                    $resultado = mysqli_query($conexao, $consulta);
-                    if (mysqli_num_rows($resultado) == 0) {
-                  ?>
-                    <tr>
-                      <td colspan="5" class="text-center"><?php echo "Nenhuma turma cadastrada."; ?></td>
-                    </tr>
-                  <?php
-                    } else {
-                      while ($array = mysqli_fetch_assoc($resultado)) {
-                  ?>
-                    <tr>
-                      <form action="../exe/excluir_turma_exe.php" method="get">
-                        <td><?php echo $array['cod_turma']; ?></td>
-                        <td><?php echo $array['nome']; ?></td>
-                        <td><?php echo $array['qnt_horarios']; ?></td>
-                        <td><?php echo $array['turno']; ?></td>
-                        <td><button type="submit" class="btn btn-danger" name="cod_turma" value=<?php echo $array['cod_turma']; ?>>Excluir</button></td>
-                      </form>
-                    </tr>
-                  <?php
-                      }
-                    }
-                  ?>
-                </tbody>
-       </table>   
-              <tbody>
-                <?php
-                  $cod_escola = $_SESSION['cod_escola'];
-                  $consulta = "SELECT * FROM turma WHERE cod_escola = '$cod_escola'";
-                  $resultado = mysqli_query($conexao, $consulta);
-                  if (mysqli_num_rows($resultado) == 0) {
-                ?>
-                  <tr>
-                    <td colspan="5" class="text-center"><?php echo "Nenhuma turma cadastrada."; ?></td>
-                  </tr>
-                <?php
-                  } else {
-                    while ($array = mysqli_fetch_assoc($resultado)) {
-                ?>
-                  <tr>
-                    <form action="../exe/excluir_turma_exe.php" method="get">
+ <!-- Tabela de cadastrados -->
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Quantidade de horários</th>
+        <th scope="col">Turno</th>
+        <th scope="col">Ação</th>
+        
+      </tr>
+    </thead>
+  
+  
+  <?php
+             
+    $consulta = "SELECT * FROM turma";
+    $resultado = mysqli_query($conexao, $consulta);
+    $array = mysqli_fetch_array($resultado);
+      while ($array = mysqli_fetch_assoc($resultado)) {
+          ?>                    
+              <tr>
+                 <form action="../exe/excluir_turma_exe.php" method="get">
                       <td><?php echo $array['cod_turma']; ?></td>
                       <td><?php echo $array['nome']; ?></td>
                       <td><?php echo $array['qnt_horarios']; ?></td>
@@ -97,10 +71,8 @@
                       <td><button type="submit" class="btn btn-danger" name="cod_turma" value=<?php echo $array['cod_turma']; ?>>Excluir</button></td>
                     </form>
                   </tr>
-                <?php
-                    }
-                  }
-                ?>
+                <?php } ?>
+                  
               </tbody>
        </table>
       <!-- Fim tabela de cadastrados -->
