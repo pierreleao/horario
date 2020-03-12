@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 07-Mar-2020 às 00:43
+=======
+-- Tempo de geração: 07-Mar-2020 às 00:37
+>>>>>>> upstream/master
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.1.32
 
@@ -103,8 +107,12 @@ CREATE TABLE `escola` (
 --
 
 INSERT INTO `escola` (`cod_escola`, `cnpj`, `nome`, `telefone`, `endereco`, `numero`, `cidade`, `estado`, `pais`, `cep`, `tipo_escola`, `data_cadastro`, `senha`) VALUES
+<<<<<<< HEAD
 (1, '', 'Berenice', '', '', '', '', 'Estado...', '', '', 'Escolher..', '27/02/2020', ''),
 (2, '0000000000000', 'PIERRE DA SILVA LEÃƒO', '999999999999', 'Rua E', '90', 'ARCOS', 'MG', 'BRASIL', '35588000', 'Particular', '05/03/2020', '');
+=======
+(1, '1234567890', 'teste', '37 33512698', 'Rua JoÃ£o XXIII', '154', 'Arcos', 'MG', 'Brasil', '35588000', 'PÃºblica', '05/03/2020', '');
+>>>>>>> upstream/master
 
 -- --------------------------------------------------------
 
@@ -116,9 +124,15 @@ CREATE TABLE `horarios` (
   `cod_horarios` int(50) NOT NULL,
   `cod_turno` int(20) DEFAULT NULL,
   `cod_escola` int(20) DEFAULT NULL,
+<<<<<<< HEAD
   `posicao` varchar(200) NOT NULL,
   `dia_da_semana` varchar(200) NOT NULL,
   `hora_inicial_hora_final` varchar(200) NOT NULL
+=======
+  `posicao` varchar(20) NOT NULL,
+  `dias_da_semana` varchar(20) NOT NULL,
+  `hora_inicial_hora_final` varchar(20) NOT NULL
+>>>>>>> upstream/master
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -163,6 +177,13 @@ CREATE TABLE `professor` (
   `masp` varchar(20) NOT NULL,
   `cod_escola` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `professor`
+--
+
+INSERT INTO `professor` (`cod_professor`, `cpf`, `nome`, `telefone`, `endereco`, `numero`, `cidade`, `estado`, `pais`, `cep`, `masp`, `cod_escola`) VALUES
+(1, '121654231', 'teste', '3520644', 'rua tal tal', '123', 'arcos', '', 'brasil', '35588000', '31235468579874654132', 1);
 
 -- --------------------------------------------------------
 
@@ -212,11 +233,16 @@ CREATE TABLE `turma` (
 --
 
 INSERT INTO `turma` (`cod_turma`, `nome`, `qnt_horarios`, `turno`, `cod_turno`, `cod_escola`) VALUES
+<<<<<<< HEAD
 (4, 'PIERRE DA SILVA LEÃƒ', '', '', NULL, 0),
 (5, 'LUCAS DA SILVA LEAO', '', '', NULL, 0),
 (6, 'PIERRE DA SILVA LEÃƒ', '52', 'SE', NULL, NULL),
 (7, 'Marli Aparecida Silv', '10', 'TE', NULL, NULL),
 (8, 'LUCAS DA SILVA LEAO', '10', 'Manha', NULL, NULL);
+=======
+(1, 'teste', '', 'manhÃ£', NULL, 1),
+(2, 'teste2', '', 'noturno', NULL, 1);
+>>>>>>> upstream/master
 
 -- --------------------------------------------------------
 
@@ -250,8 +276,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`, `email`, `tipo_usuario`, `cod_escola`) VALUES
+<<<<<<< HEAD
 (1, 'maria', '202cb962ac59075b964b07152d234b70', 'maria@maria.com', 'Administrador', 1),
 (2, 'pierresilvaleao@hotmail.com', '9e60e43616ca03abe009c1d7153cfc32', 'pierresilvaleao@hotmail.com', 'Administrador', 2);
+=======
+(1, 'teste', '698dc19d489c4e4db73e28a713eab07b', 'teste@teste.com', 'Administrador', 1);
+>>>>>>> upstream/master
 
 --
 -- Índices para tabelas despejadas
@@ -373,7 +403,11 @@ ALTER TABLE `escola`
 -- AUTO_INCREMENT de tabela `horarios`
 --
 ALTER TABLE `horarios`
+<<<<<<< HEAD
   MODIFY `cod_horarios` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+=======
+  MODIFY `cod_horarios` int(50) NOT NULL AUTO_INCREMENT;
+>>>>>>> upstream/master
 
 --
 -- AUTO_INCREMENT de tabela `indisponibilidade`
@@ -385,7 +419,7 @@ ALTER TABLE `indisponibilidade`
 -- AUTO_INCREMENT de tabela `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `cod_professor` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_professor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `quadro`
@@ -403,7 +437,11 @@ ALTER TABLE `tipo_ensino`
 -- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
+<<<<<<< HEAD
   MODIFY `cod_turma` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+  MODIFY `cod_turma` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> upstream/master
 
 --
 -- AUTO_INCREMENT de tabela `turno`

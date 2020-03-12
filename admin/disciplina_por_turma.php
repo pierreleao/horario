@@ -4,7 +4,9 @@
   ============================-->
 <main>
   <!-- Cadastro -->
-  <h1 align="center">Cadastro de Turmas</h1>
+
+  <h1 align="center">Cadastro de Disciplina por Turmas</h1>
+
   <section class="img_cadastros">
     <div class="container font">
       <div class="font">
@@ -42,12 +44,7 @@
                   ?>
                 </select>
               </div>
-              <div class="col">
-              <label for="exampleInputPassword1" >Professor</label>
-                <select name="cod_disciplina" id="inputEstado" class="form-control">
-                  <option selected>Professor da Disciplina</option>               
-                </select>
-            </div>
+          
             <div class="col">
               <label for="exampleInputPassword1" >Professor</label>
               <select name="cod_professor" id="inputEstado" class="form-control">

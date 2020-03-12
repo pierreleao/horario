@@ -11,13 +11,19 @@
 34 - 
 35 -
 36 - 
-37- Cadastro de professore, completar os dois campos de indisponibilidades com os dados do cadastro de horario
-38 - A lista de indisponibilidade dos professores.
-39 - Cadastro de disciplinas por turma: o campo turma deve buscar as turmas cadastradas, o campo disciplina deve buscar as disciplinas cadastradas, e está faltando um campo professor, que deve buscar os professores cadastrados de acordo com a disciplina escolhida. 
-40 - No cadastro de disciplina por turma o titulo esta errado
-41 - Botao salvar no cadastro de turmas, nao tem.
-42 - Cadastro de horário nao esta funcionando
-43 - Cadastro de Turno nao esta funcionando
-44 - Cadastro de Professores somente o nome deve ser obrigatório.
+37- 
+38 - A lista de indisponibilidade dos professores. Fazer funcionar
+39 - 
+40 - 
+41 - 
+42 - 
+43 - 
+44 - 
+45 - Lista de Cadastro de turma, mostrando uma linha errada no final
+46 - 
+47 - Back End - Fazer o cadastro de horario funcionar
+48 - Cadastro de Disciplina por turma, tem um campo professor a mais.
+49 - Excluir campo desnecessário no cadastro de turno
+50 - Back end -  No cadatro curso, não está sendo salvo no banco de dados,(olhar o parametro name
 
 PRINCIPAL - Criar tela de gerar horario

@@ -3,7 +3,6 @@
    Introduçao + botoes destaque login e Cadastro
   ============================-->
   <section id="intro">
-
     <div class="intro-content">
       <h2>Crie seus <span>Horários</span><br></h2>
       <h2>Com o TimeTable</h2>
@@ -40,8 +39,10 @@
       
       <div class="container">
         <div class="section-header">
+
           <h2>TimeTible</h2>
-          <h4><p>Nossa plataforma consiste em, criar horarios para as escolas de forma mais fácil e eficiente, para que não hajam conflitos na hora de organizar os horários.</p></h4>
+          <h3><b></a><p>Nossa plataforma consiste em, criar horários para as escolas de forma mais fácil e eficiente, para que não hajam conflitos na hora de organizá-los.</p></b></h3>
+
         </div>
       </div>
     </section><!-- #clients -->
@@ -67,7 +68,9 @@
               <div class="pic"><img src="img/fotos/1.JPG" alt=""></div>
               <div class="details">
                 <h4> João Paulo </h4>
-                <span>Programador de Back-end</span>
+
+                <span>Programador de Front-end</span>
+
                 <div class="social">                 
                   
                   <a href="https://www.instagram.com/peregrinolunar/" target="_blank"><i class="fa fa-instagram"></i></a>
